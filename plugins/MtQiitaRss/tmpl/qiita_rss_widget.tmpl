@@ -1,0 +1,20 @@
+<mtapp:widget label="Qiita MTの最新情報" can_close="1">
+    <ul class="mt-widget__list">
+        <mt:Loop name="items">
+            <li><a href='<mt:Var name="url">' target="_blank">
+                    <mt:Var name="title">
+                </a></li>
+        </mt:Loop>
+    </ul>
+    <div class="last-child">
+        <a class="btn btn-default d-block first-child last-child" href="https://qiita.com/tags/movabletype" target="_blank">Movable Typeの情報をチェックする</a>
+    </div>
+</mtapp:widget>
+<script>
+    (function($) {
+        $("#qiita_rss_widget button.close").on("click",function(e){
+            e.preventDefault();
+            $("#qiita_rss_widget-form").submit();
+        });
+    })(jQuery);
+</script>
